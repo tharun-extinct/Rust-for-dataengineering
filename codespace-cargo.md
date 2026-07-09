@@ -96,3 +96,22 @@ Fixed the project wiring so Cargo can build it: Cargo.toml now has a valid clap 
 I couldn’t run `cargo run` in this shell because `cargo` and `rustc` are not installed here. Rebuild or reopen the devcontainer, then run `cargo run -- play --name Marco` to verify the binary.
 
 Made changes.
+
+
+
+
+Updated todo list
+
+I’m checking the shell startup file and the terminal state to separate a .bashrc sourcing issue from a terminal/tool issue. After that I can say whether the file itself is the problem or the shell session isn’t loading it.
+
+Read [](file:///workspaces/Rust-for-dataengineering/.bashrc)
+
+Got last terminal command
+
+Read terminal selection
+
+`gs` isn’t working because the .bashrc you’re editing is in the workspace at /.bashrc, but Bash only auto-loads the shell startup file from your home directory, usually ~/.bashrc, for interactive terminals.
+
+So the alias exists in the file, but your current terminal session never sourced it. You can fix that by either sourcing the workspace file manually with `source /workspaces/Rust-for-dataengineering/.bashrc` or by copying the alias lines into ~/.bashrc. If you want, I can help wire the workspace file into your terminal startup properly.
+
+

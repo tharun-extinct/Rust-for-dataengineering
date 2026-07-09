@@ -1,0 +1,9 @@
+{
+  "terminal.integrated.profiles.linux": {
+    "bash (workspace init)": {
+      "path": "bash",
+      "args": ["--init-file", "${workspaceFolder}/.bashrc"]
+    }
+  },
+  "terminal.integrated.defaultProfile.linux": "bash (workspace init)"
+}
